@@ -1,0 +1,2 @@
+unittest  # Para testes unitários
+hashlib   # Biblioteca padrão para segurança

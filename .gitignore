@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+.env
+senha.txt  # Não versionar arquivos sensíveis
