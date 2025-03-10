@@ -1,16 +1,24 @@
-from recomendacao import Recomendacao
-from usuario import Usuario
-from serie import Serie
+from src.recomendacao import Recomendacao
+from src.usuario import Usuario
+from src.serie import Serie
 
-# Criando um usuário
-usuario = Usuario("Alice")
-usuario.assistir("Ação")
+# RNF: Manutenibilidade — Código modular e bem organizado
+def executar():
+    # Criando um usuário com senha
+    usuario = Usuario("Alice", "senha123")
+    if usuario.verificar_senha("senha123"):
+        print("Senha verificada com sucesso!")
 
-# Recomendação com base no histórico
-recomendador = Recomendacao(usuario.obter_historico())
-print(recomendador.recomendar())
+    usuario.assistir("Ação")
 
-# Controle de séries
-serie = Serie("Stranger Things")
-serie.assistir(30)
-print(serie.continuar())
+    # Recomendação com base no histórico
+    recomendador = Recomendacao(usuario.obter_historico())
+    print(recomendador.recomendar())
+
+    # Controle de séries
+    serie = Serie("Stranger Things")
+    serie.assistir(30)
+    print(serie.continuar())
+
+if __name__ == "__main__":
+    executar()
